@@ -8,33 +8,60 @@
 </head>
 <body>
 
-    <header class="bg-warning p-3 text-center">
+    <header class="bg-warning p-3 text-center ">
         <h1>User Manager</h1>
     </header>
 
+    <main class="container mt-4">
 
-    <main class="container" id="tblUsers">
+        <div class="card my-4">
+            <div class="card-body">
+                <form action="" id="frmUser" data-method="create" data-id="">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="mb-3">
+                                <label for="txtFirstName" class="form-label">First Name</label>
+                                <input type="text" required class="form-control" id="txtFirstName">
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="mb-3">
+                                <label for="txtLastName" class="form-label">Last Name</label>
+                                <input type="text" required class="form-control" id="txtLastName">
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="mb-3">
+                                <label for="txtEmail" class="form-label">Email</label>
+                                <input type="email" required class="form-control" id="txtEmail">
+                            </div>
+                        </div>
+                        <div class="col-md-auto d-flex align-items-end">
+                            <div class="mb-3"><button class="btn btn-warning" id="btnSubmit" type="submit">➕ Add</button>
+                            </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Image</th>
-                    <th>Firts Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><img src="" alt=""></td>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john.doe@gmail.com</td>
-                </tr>
-            </tbody>
-        </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-responsivexx">
+            <table id="tblUsers" class="table table-striped ">
+                <thead class="sticky-top top-0">
+                    <tr>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
     </main>
 
     <script type="module" src="js/script.js"></script>

@@ -23,4 +23,29 @@ const deleteUser= async (id)=>{
     return data;
 }
 
-export{getAllUsers,getUserById,deleteUser}
+const createUser = async (user) => {
+    const res=await fetch(`${API_URL}/users`,{
+        method:"POST" ,
+        body:JSON.stringify(user),
+        headers:{
+            "Content-Type":"application/json",
+        },
+    });
+    if(!res.ok) throw new Error("Something went wrong");
+    const data =await res.json();
+    return data;
+};
+
+const updateUser = async (id, user) => {
+    const res = await fetch(`${API_URL}/users/${id}`, {
+        method: "put",
+        body: JSON.stringify(user),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    if (!res.ok) throw new Error("Something went wrong");
+    const data = await res.json();
+    return data;
+};
+export{getAllUsers,getUserById,deleteUser,createUser,updateUser}
